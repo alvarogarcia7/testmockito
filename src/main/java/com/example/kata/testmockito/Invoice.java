@@ -1,26 +1,23 @@
 package com.example.kata.testmockito;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Invoice {
 
-	//TODO AGB refactor: encapsulate into a collection
-	private final List<Line> lines;
+	private final Lines encapsulatedLines;
 
 	public Invoice() {
-		lines = new ArrayList<Line>();
+		encapsulatedLines = new Lines();
 	}
 
 	public Amount getTotal() {
-		if (lines.isEmpty()) {
+		if (encapsulatedLines.isEmpty()) {
 			return new Amount(0);
 		}
-		return lines.get(lines.size() - 1).getAmount();
+		return encapsulatedLines.getLast().getAmount();
 	}
 
 	public Invoice addLine(final Line line) {
-		lines.add(line);
+		encapsulatedLines.add(line);
 		return this;
 	}
 
