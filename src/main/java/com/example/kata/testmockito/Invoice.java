@@ -10,10 +10,7 @@ public class Invoice {
 	}
 
 	public Amount getTotal() {
-		if (encapsulatedLines.isEmpty()) {
-			return new Amount(0);
-		}
-		return encapsulatedLines.getLast().getAmount();
+		return encapsulatedLines.getTotal();
 	}
 
 	public Invoice addLine(final Line line) {

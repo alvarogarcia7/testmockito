@@ -19,4 +19,11 @@ public class Lines {
 		return value.get(value.size() - 1);
 	}
 
+	public Amount getTotal() {
+		if (value.isEmpty()) {
+			return new Amount(0);
+		}
+		return getLast().getAmount();
+	}
+
 }
