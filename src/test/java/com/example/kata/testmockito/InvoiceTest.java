@@ -14,4 +14,9 @@ public class InvoiceTest {
 		assertThat(new Invoice(), not(equalTo(null)));
 	}
 
+	@Test
+	public void an_empty_invoice_should__total_as_zero() {
+		assertThat(new Invoice().getTotal(), equalTo(0));
+	}
+
 }
