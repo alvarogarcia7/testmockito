@@ -2,13 +2,19 @@ package com.example.kata.testmockito;
 
 public class Invoice {
 
+	private Line line;
+
 	public Amount getTotal() {
-		return new Amount(0);
+		if (null == line) {
+			return new Amount(0);
+		}
+		return new Amount(1);
 	}
 
+	//TODO AGB rename to addLine
 	public Invoice addInvoice(final Line line) {
-		// TODO Auto-generated method stub
-		return null;
+		this.line = line;
+		return this;
 	}
 
 }
