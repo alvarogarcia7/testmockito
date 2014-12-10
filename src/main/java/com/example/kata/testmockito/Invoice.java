@@ -6,4 +6,9 @@ public class Invoice {
 		return new Amount(0);
 	}
 
+	public Invoice addInvoice(final Line line) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
