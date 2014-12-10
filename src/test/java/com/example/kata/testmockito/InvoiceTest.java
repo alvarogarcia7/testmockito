@@ -21,4 +21,9 @@ public class InvoiceTest {
 		assertThat(sut.getTotal(), equalTo(new Amount(0)));
 	}
 
+	@Test
+	public void a_non_empty_invoice_should_total(){
+		assertThat(sut.addInvoice(new Line(new Amount(1))).getTotal(), equalTo(new Amount(1)));
+	}
+
 }
