@@ -2,6 +2,9 @@ package com.example.kata.testmockito;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.sameInstance;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -23,9 +26,12 @@ public class InvoiceTest {
 
 	@Test
 	public void a_non_empty_invoice_should_total(){
-		Amount amount = new Amount(1);
-		Line line = new Line(amount);
-		assertThat(sut.addLine(line).getTotal(), equalTo(amount));
+		final Amount amount = new Amount(1);
+		final Line line = mock(Line.class);
+
+		doReturn(amount).when(line).getAmount();
+
+		assertThat(sut.addLine(line).getTotal(), sameInstance(amount));
 	}
 
 }
