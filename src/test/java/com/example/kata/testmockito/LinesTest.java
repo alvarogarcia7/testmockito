@@ -24,8 +24,7 @@ public class LinesTest {
 
 		doReturn(amount).when(line).getAmount();
 
-		sut.add(line);
-		assertThat(sut.getTotal(), sameInstance(amount));
+		assertThat(sut.add(line).getTotal(), sameInstance(amount));
 	}
 
 	@Test
@@ -37,10 +36,8 @@ public class LinesTest {
 		final Amount amountNonZero = new Amount(1);
 		doReturn(amountNonZero).when(lineNonZero).getAmount();
 
-		sut.add(lineZero);
-		sut.add(lineNonZero);
 
-		assertThat(sut.getTotal(), sameInstance(amountNonZero));
+		assertThat(sut.add(lineZero).add(lineNonZero).getTotal(), sameInstance(amountNonZero));
 	}
 
 }

@@ -11,8 +11,9 @@ public class Lines {
 		return value.isEmpty();
 	}
 
-	public void add(final Line line) {
+	public Lines add(final Line line) {
 		value.add(line);
+		return this;
 	}
 
 	public Line getLast() {
