@@ -2,8 +2,8 @@ package com.example.kata.testmockito;
 
 public class Invoice {
 
-	public Integer getTotal() {
-		return 0;
+	public Amount getTotal() {
+		return new Amount(0);
 	}
 
 }
