@@ -43,7 +43,7 @@ public class InvoiceTest {
 		final Amount amountNonZero = new Amount(1);
 		doReturn(amountNonZero).when(lineNonZero).getAmount();
 
-		assertThat(sut.addLine(lineNonZero).addLine(lineZero).getTotal(), sameInstance(amountNonZero));
+		assertThat(sut.addLine(lineZero).addLine(lineNonZero).getTotal(), sameInstance(amountNonZero));
 	}
 
 }
