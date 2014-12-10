@@ -23,7 +23,7 @@ public class InvoiceTest {
 
 	@Test
 	public void a_non_empty_invoice_should_total(){
-		assertThat(sut.addInvoice(new Line(new Amount(1))).getTotal(), equalTo(new Amount(1)));
+		assertThat(sut.addLine(new Line(new Amount(1))).getTotal(), equalTo(new Amount(1)));
 	}
 
 }

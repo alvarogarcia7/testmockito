@@ -11,8 +11,7 @@ public class Invoice {
 		return new Amount(1);
 	}
 
-	//TODO AGB rename to addLine
-	public Invoice addInvoice(final Line line) {
+	public Invoice addLine(final Line line) {
 		this.line = line;
 		return this;
 	}
