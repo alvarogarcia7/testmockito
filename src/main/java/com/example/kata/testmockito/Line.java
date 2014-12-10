@@ -2,8 +2,14 @@ package com.example.kata.testmockito;
 
 public class Line {
 
+	private final Amount amount;
+
 	public Line(final Amount amount) {
-		// TODO Auto-generated constructor stub
+		this.amount = amount;
+	}
+
+	public Amount getAmount() {
+		return amount;
 	}
 
 }

@@ -8,7 +8,7 @@ public class Invoice {
 		if (null == line) {
 			return new Amount(0);
 		}
-		return new Amount(1);
+		return line.getAmount();
 	}
 
 	public Invoice addLine(final Line line) {
