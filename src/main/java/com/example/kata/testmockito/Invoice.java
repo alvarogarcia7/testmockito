@@ -1,20 +1,25 @@
 package com.example.kata.testmockito;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Invoice {
 
-	private Line line;
+	private final List<Line> lines;
+
+	public Invoice() {
+		lines = new ArrayList<Line>();
+	}
 
 	public Amount getTotal() {
-		if (null == line) {
+		if (lines.isEmpty()) {
 			return new Amount(0);
 		}
-		return line.getAmount();
+		return lines.get(lines.size() - 1).getAmount();
 	}
 
 	public Invoice addLine(final Line line) {
-		if (null == this.line) {
-			this.line = line;
-		}
+		lines.add(line);
 		return this;
 	}
 
