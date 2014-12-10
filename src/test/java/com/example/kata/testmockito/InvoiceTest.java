@@ -12,11 +12,11 @@ import org.junit.Test;
 
 public class InvoiceTest {
 
-	private static Invoice sut = new Invoice();
+	private static Invoice sut;
 
 	@Before
 	public void setUp() {
-		sut = new Invoice();
+		sut = new Invoice(new Lines());
 	}
 
 	@Test

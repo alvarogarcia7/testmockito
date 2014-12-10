@@ -5,8 +5,8 @@ public class Invoice {
 
 	private final Lines encapsulatedLines;
 
-	public Invoice() {
-		encapsulatedLines = new Lines();
+	public Invoice(final Lines lines) {
+		encapsulatedLines = lines;
 	}
 
 	public Amount getTotal() {
