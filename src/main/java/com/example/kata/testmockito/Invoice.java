@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Invoice {
 
+	//TODO AGB refactor: encapsulate into a collection
 	private final List<Line> lines;
 
 	public Invoice() {
