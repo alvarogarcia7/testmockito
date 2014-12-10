@@ -12,7 +12,9 @@ public class Invoice {
 	}
 
 	public Invoice addLine(final Line line) {
-		this.line = line;
+		if (null == this.line) {
+			this.line = line;
+		}
 		return this;
 	}
 
