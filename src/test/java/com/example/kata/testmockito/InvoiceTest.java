@@ -26,7 +26,7 @@ public class InvoiceTest {
 
 	@Test
 	public void a_non_empty_invoice_should_total(){
-		final Amount amount = new Amount(1);
+		final Amount amount = mock(Amount.class);
 		final Line line = mock(Line.class);
 
 		doReturn(amount).when(line).getAmount();
