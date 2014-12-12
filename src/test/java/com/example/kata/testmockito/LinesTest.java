@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.sameInstance;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +31,8 @@ public class LinesTest {
 	@Test
 	public void two_lines_should_total() {
 		final Line lineZero = mock(Line.class);
-		doReturn(mock(Amount.class)).when(lineZero).getAmount();
+		when(lineZero.getAmount()).thenReturn(mock(Amount.class));
+		//		doReturn(mock(Amount.class)).when(lineZero).getAmount();
 
 		final Line lineNonZero = mock(Line.class);
 		final Amount amountNonZero = new Amount(1);
